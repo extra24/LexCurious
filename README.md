@@ -11,31 +11,31 @@ LexQurious/
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
 ├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── com/lexqurious/        ← 최상위 패키지 (여기에 모든 소스 코드 배치)
-│   │   │   │   ├── api/
-│   │   │   │   │   ├── LawApiClient.java           // 법률 API 통신 (HTTP 요청)
-│   │   │   │   │   └── ApiResponseParser.java      // API 응답 데이터 파싱
-│   │   │   │   ├── model/
-│   │   │   │   │   ├── Law.java                    // 법률 기본 정보 모델
-│   │   │   │   │   └── LawDetail.java              // 법률 상세 정보 모델
-│   │   │   │   ├── recommender/
-│   │   │   │   │   └── WeirdLawSelector.java       // 특이한 법률 선정 로직
-│   │   │   │   ├── ui/
-│   │   │   │   │   ├── MainFrame.java              // 메인 GUI 창 (JFrame)
-│   │   │   │   │   ├── LawPanel.java               // 법률 목록/상세 표시 패널 (JPanel)
-│   │   │   │   │   ├── BookmarkPanel.java          // 북마크 목록 표시 패널 (JPanel)
-│   │   │   │   │   └── components/                 // 재사용 가능한 UI 컴포넌트들
-│   │   │   │   │       ├── SearchBar.java
-│   │   │   │   │       └── CustomButton.java
-│   │   │   │   ├── storage/
-│   │   │   │   │   └── BookmarkManager.java        // 북마크 데이터 관리 (파일, DB 등)
-│   │   │   │   └── LexQuriousApp.java              // 애플리케이션 진입점 (main 메서드)
-│   │   │   └── resources/
-│   │   │       ├── application.properties          // 설정 파일 (API 키, 기본값 등)
-│   │   │       ├── images/                         // UI 아이콘, 이미지 등
-│   └─  └─      └── styles/                         // UI 스타일 관련 (선택 사항, Swing LookAndFeel)
+│   └── main/
+│       └── java/
+│           ├── com/lexqurious/        ← 최상위 패키지 (여기에 모든 소스 코드 배치)
+│           │   ├── api/
+│           │   │   ├── LawApiClient.java           // 법률 API 통신 (HTTP 요청)
+│           │   │   └── ApiResponseParser.java      // API 응답 데이터 파싱
+│           │   ├── model/
+│           │   │   ├── Law.java                    // 법률 기본 정보 모델
+│           │   │   └── LawDetail.java              // 법률 상세 정보 모델
+│           │   ├── recommender/
+│           │   │   └── WeirdLawSelector.java       // 특이한 법률 선정 로직
+│           │   ├── ui/
+│           │   │   ├── MainFrame.java              // 메인 GUI 창 (JFrame)
+│           │   │   ├── LawPanel.java               // 법률 목록/상세 표시 패널 (JPanel)
+│           │   │   ├── BookmarkPanel.java          // 북마크 목록 표시 패널 (JPanel)
+│           │   │   └── components/                 // 재사용 가능한 UI 컴포넌트들
+│           │   │       ├── SearchBar.java
+│           │   │       └── CustomButton.java
+│           │   ├── storage/
+│           │   │   └── BookmarkManager.java        // 북마크 데이터 관리 (파일, DB 등)
+│           │   └── LexQuriousApp.java              // 애플리케이션 진입점 (main 메서드)
+│           └── resources/
+│               ├── application.properties          // 설정 파일 (API 키, 기본값 등)
+│               ├── images/                         // UI 아이콘, 이미지 등
+│               └── styles/                         // UI 스타일 관련 (선택 사항, Swing LookAndFeel)
 │
 ├── .gitignore                      ← Git 추적 제외 파일 목록
 ├── build.gradle                    ← Gradle 빌드 스크립트
