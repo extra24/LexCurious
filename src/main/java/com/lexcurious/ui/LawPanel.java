@@ -1,4 +1,4 @@
-package com.lexqurious.ui;
+package com.lexcurious.ui;
 
 public class LawPanel {
 }

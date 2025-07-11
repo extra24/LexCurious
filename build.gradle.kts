@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "com.lexqurious"
+group = "com.lexcurious"
 version = "1.0-SNAPSHOT"
 
 repositories {

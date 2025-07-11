@@ -1,4 +1,4 @@
-package com.lexqurious.api;
+package com.lexcurious.api;
 
 public class LawApiClient {
 }
