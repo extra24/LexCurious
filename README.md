@@ -2,9 +2,7 @@
 - 법제처 Open API를 활용, 대한민국 법령 중 흥미롭거나 특이한 제목/조항을 찾아 추천하는 Java 애플리케이션
 
 ## 구조(임시)
-LexQurious 프로젝트의 대략적인 디렉토리 구조와 Swing UI를 고려하여 재구성해 드릴게요. 기존에 제시하신 구조는 깔끔하며, 여기에 Swing UI 요소를 통합하고 몇 가지 일반적인 관례를 추가하여 더 견고하게 만들 수 있습니다.
-
-LexQurious 프로젝트 디렉토리 구조 (Swing UI 포함) 🏗️
+```
 LexQurious/
 ├── .gradle/                        ← Gradle 내부 파일 (IntelliJ가 자동 생성)
 ├── .idea/                          ← IntelliJ IDEA 프로젝트 설정 파일 (IntelliJ가 자동 생성)
@@ -43,3 +41,4 @@ LexQurious/
 ├── build.gradle                    ← Gradle 빌드 스크립트
 ├── settings.gradle                 ← Gradle 프로젝트 설정
 └── README.md                       ← 프로젝트 설명 문서
+```
