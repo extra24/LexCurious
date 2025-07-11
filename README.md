@@ -3,9 +3,9 @@
 
 ## 구조(임시)
 ```
-LexQurious/
-├── .gradle/                        ← Gradle 내부 파일 (IntelliJ가 자동 생성)
-├── .idea/                          ← IntelliJ IDEA 프로젝트 설정 파일 (IntelliJ가 자동 생성)
+LexCurious/
+├── .gradle/                        ← Gradle 내부 파일 
+├── .idea/                          ← IntelliJ IDEA 프로젝트 설정 파일 
 ├── gradle/
 │   └── wrapper/
 │       ├── gradle-wrapper.jar
@@ -13,7 +13,7 @@ LexQurious/
 ├── src/
 │   └── main/
 │       └── java/
-│           ├── com/lexqurious/        ← 최상위 패키지 (여기에 모든 소스 코드 배치)
+│           ├── com/lexcurious/        
 │           │   ├── api/
 │           │   │   ├── LawApiClient.java           // 법률 API 통신 (HTTP 요청)
 │           │   │   └── ApiResponseParser.java      // API 응답 데이터 파싱
@@ -31,7 +31,7 @@ LexQurious/
 │           │   │       └── CustomButton.java
 │           │   ├── storage/
 │           │   │   └── BookmarkManager.java        // 북마크 데이터 관리 (파일, DB 등)
-│           │   └── LexQuriousApp.java              // 애플리케이션 진입점 (main 메서드)
+│           │   └── LexCuriousApp.java              // 애플리케이션 진입점 (main 메서드)
 │           └── resources/
 │               ├── application.properties          // 설정 파일 (API 키, 기본값 등)
 │               ├── images/                         // UI 아이콘, 이미지 등
