@@ -2,11 +2,11 @@ package com.lexcurious.model;
 import com.google.gson.annotations.SerializedName;
 import java.time.LocalDate;
 
-// 법률 목록 정보 모델 : 현행법령 목록 모델
-// Record 사용 : 데이터만 담는 클래스
+// 개별 법률의 간략화된 정보 모델 : 법률의 데이터 구조
+// *Record 사용 : 데이터만 담는 클래스
 public record Law (
         @SerializedName("법령일련번호") int lawSerialId,
-        @SerializedName("법령명한글") String lawNameKorean,
+        @SerializedName("법령명한글") String lawName,
         @SerializedName("법령약칭명") String lawAbbreviation,
         @SerializedName("공포일자") int promulgationDate,
         @SerializedName("공포번호") int promulgationNumber,

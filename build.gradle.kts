@@ -22,7 +22,9 @@ dependencies {
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
 
-    //@TODO HTTP 클라이언트
+    // HTTP 클라이언트
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
 }
 
 tasks.test {
