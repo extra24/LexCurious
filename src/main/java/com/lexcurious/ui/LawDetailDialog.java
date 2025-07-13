@@ -17,13 +17,13 @@ public class LawDetailDialog extends JDialog {
     private final JTree lawTree;
 
     public LawDetailDialog(Frame owner, Law law) {
-        super(owner, law.lawNameKorean() + " 상세 정보", true);
+        super(owner, law.lawName() + " 상세 정보", true);
         setSize(600, 800);
         setLocationRelativeTo(owner);
         setLayout(new BorderLayout(10, 10));
 
         // 법령명 표시 레이블
-        lawNameLabel = new JLabel(law.lawNameKorean(), SwingConstants.CENTER);
+        lawNameLabel = new JLabel(law.lawName(), SwingConstants.CENTER);
         lawNameLabel.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
         add(lawNameLabel, BorderLayout.NORTH);
 

@@ -27,7 +27,7 @@ public class LawListCellRenderer extends JPanel implements ListCellRenderer<Law>
     @Override
     public Component getListCellRendererComponent(JList<? extends Law> list, Law value, int index,
                                                   boolean isSelected, boolean cellHasFocus) {
-        lawNameLabel.setText(value.lawNameKorean());
+        lawNameLabel.setText(value.lawName());
         promulgationInfoLabel.setText("공포번호: " + value.promulgationNumber() + " | 공포일자: " + value.getPromulgationDate());
 
         if (isSelected) {
