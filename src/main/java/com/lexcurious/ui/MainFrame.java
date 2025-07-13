@@ -6,6 +6,8 @@ import com.lexcurious.ui.components.LawListCellRenderer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainFrame extends JFrame {
     public JPanel contentPane;
@@ -30,6 +32,20 @@ public class MainFrame extends JFrame {
 
         lawApiClient = new LawApiClient();
         resultList.setCellRenderer(new LawListCellRenderer());
+
+        resultList.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                if (evt.getClickCount() == 2) { // 더블클릭 감지
+                    int index = resultList.locationToIndex(evt.getPoint());
+                    Law selectedLaw = resultList.getModel().getElementAt(index);
+                    if (selectedLaw != null) {
+                        // 상세 정보 다이얼로그 생성 및 표시
+                        LawDetailDialog dialog = new LawDetailDialog(MainFrame.this, selectedLaw);
+                        dialog.setVisible(true);
+                    }
+                }
+            }
+        });
 
         searchButton.addActionListener(e -> {
             // UI 확인을 위한 더미 데이터
