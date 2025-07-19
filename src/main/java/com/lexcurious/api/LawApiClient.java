@@ -3,6 +3,8 @@ package com.lexcurious.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.lexcurious.model.LawDetail;
+import com.lexcurious.model.LawSearch;
+import com.lexcurious.model.LawSearchWrapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -25,9 +27,9 @@ public class LawApiClient {
     private final String LAW_DETAIL_API_BASE_URL;   // 법률 본문 API URL
 
     // 생성자 - OkHttpClient와 Gson 인스턴스를 주입받고, 설정 파일에서 API URL을 로드
-    public LawApiClient(OkHttpClient httpClient, Gson gson) {
-        this.httpClient = httpClient;
-        this.gson = gson;
+    public LawApiClient() {
+        this.httpClient = new OkHttpClient();;
+        this.gson = new Gson();
 
         Properties prop = loadProperties();
         LAW_LIST_API_BASE_URL = getProperty(prop, "law.api.list.base-url");
@@ -67,10 +69,10 @@ public class LawApiClient {
      * @return LawListResponse 객체 (총 개수, 페이지, 법률 목록 포함)
      * @throws IOException API 통신 오류 발생 시
      */
-    public LawListResponse searchLawList(String keyword) throws IOException, JsonSyntaxException {
+    public LawSearchWrapper getLawSearch(String keyword) throws IOException, JsonSyntaxException {
         String encodedKeyword = URLEncoder.encode(keyword, StandardCharsets.UTF_8);
         String url = String.format("%s&query=%s", LAW_LIST_API_BASE_URL, encodedKeyword);
-        return executeRequestAndParse(url, LawListResponse.class);
+        return executeRequestAndParse(url, LawSearchWrapper.class);
     }
 
     /**
