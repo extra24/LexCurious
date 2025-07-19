@@ -19,22 +19,17 @@ public class LawApiClient {
     private final OkHttpClient httpClient;
     private final Gson gson;
 
-    // API KEY
-    private final String API_KEY;
-
     // API URL
     private final String LAW_LIST_API_BASE_URL;     // 법률 목록 API URL
     private final String LAW_DETAIL_API_BASE_URL;   // 법률 본문 API URL
 
-    // 생성자
-    public LawApiClient(OkHttpClient httpClient, Gson gson, String apiKey, String lawListApiBaseUrl, String lawDetailApiBaseUrl) {
+    // 생성자 - OkHttpClient와 Gson 인스턴스를 주입받고, 설정 파일에서 API URL을 로드
+    public LawApiClient(OkHttpClient httpClient, Gson gson) {
         this.httpClient = httpClient;
         this.gson = gson;
 
         Properties prop = loadProperties();
-
-        API_KEY = getProperty(prop, "law.api.key");
-        LAW_LIST_API_BASE_URL = getProperty(prop, "law.api.list.base-ur");
+        LAW_LIST_API_BASE_URL = getProperty(prop, "law.api.list.base-url");
         LAW_DETAIL_API_BASE_URL = getProperty(prop, "law.detail.api.base-url");
     }
 
