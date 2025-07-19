@@ -3,7 +3,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-config.properties
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -16,6 +16,7 @@ config.properties
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+/src/main/resources/config.properties
 
 ### Eclipse ###
 .apt_generated
