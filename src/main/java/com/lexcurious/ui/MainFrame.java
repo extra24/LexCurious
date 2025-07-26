@@ -1,7 +1,6 @@
 package com.lexcurious.ui;
 
-import com.lexcurious.api.LawApiClient;
-import com.lexcurious.model.Law;
+import com.lexcurious.model.search.Law;
 import com.lexcurious.ui.components.LawListCellRenderer;
 
 import javax.swing.*;

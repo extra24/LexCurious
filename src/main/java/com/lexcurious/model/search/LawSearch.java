@@ -1,4 +1,4 @@
-package com.lexcurious.model;
+package com.lexcurious.model.search;
 
 import com.google.gson.annotations.SerializedName;
 
