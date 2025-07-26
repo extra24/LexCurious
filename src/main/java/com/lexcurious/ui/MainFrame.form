@@ -31,17 +31,10 @@
           </component>
         </children>
       </grid>
-      <scrollpane id="b8c3a" binding="scrollPane">
+      <component id="5db2f" class="com.lexcurious.ui.LawPanel" binding="lawPanel" custom-create="true">
         <constraints border-constraint="Center"/>
         <properties/>
-        <border type="none"/>
-        <children>
-          <component id="a1b2c" class="javax.swing.JList" binding="resultList">
-            <constraints/>
-            <properties/>
-          </component>
-        </children>
-      </scrollpane>
+      </component>
     </children>
   </grid>
 </form>
