@@ -2,6 +2,7 @@ package com.lexcurious.ui.components;
 
 import com.lexcurious.model.tree.ArticleItem;
 import com.lexcurious.model.tree.ClauseItem;
+import com.lexcurious.model.tree.HoItem;
 import com.lexcurious.model.tree.LegalTextItem;
 
 import javax.swing.*;
@@ -41,8 +42,12 @@ public class LawTreeCellRenderer extends DefaultTreeCellRenderer {
                     setFont(ARTICLE_FONT);
                 } else if (item instanceof ClauseItem) {
                     // 항 스타일
-                    setText(String.format("    %s (점수: %d)", displayText, score)); // 명확성을 위해 항 들여쓰기
+                    setText(String.format("%s (점수: %d)", displayText, score)); // 명확성을 위해 항 들여쓰기
                     setFont(CLAUSE_FONT);
+                } else if (item instanceof HoItem) {
+                    // 호 스타일
+                    setText(String.format("%s", displayText)); // 명확성을 위해 호 들여쓰기
+                    setFont(CLAUSE_FONT); // 항과 동일한 폰트 사용
                 }
             } else if (userObject != null) {
                 // 루트 노드 (법 이름)
