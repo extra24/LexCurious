@@ -1,9 +1,12 @@
 package com.lexcurious.api;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
-import com.lexcurious.model.LawDetail;
-import com.lexcurious.model.LawSearchWrapper;
+import com.lexcurious.model.detail.ArticleUnit;
+import com.lexcurious.model.detail.ArticleUnitDeserializer;
+import com.lexcurious.model.detail.LawDetailWrapper;
+import com.lexcurious.model.search.LawSearchWrapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -28,7 +31,10 @@ public class LawApiClient {
     // 생성자 - OkHttpClient와 Gson 인스턴스를 주입받고, 설정 파일에서 API URL을 로드
     public LawApiClient() {
         this.httpClient = new OkHttpClient();;
-        this.gson = new Gson();
+        // GsonBuilder를 사용하여 ArticleUnit 클래스에 대한 커스텀 Deserializer를 등록
+        this.gson = new GsonBuilder()
+                .registerTypeAdapter(ArticleUnit.class, new ArticleUnitDeserializer())
+                .create();
 
         Properties prop = loadProperties();
         LAW_LIST_API_BASE_URL = getProperty(prop, "law.api.list.base-url");
@@ -76,13 +82,13 @@ public class LawApiClient {
 
     /**
      특정 법률의 상세 본문 정보를 조회하는 API를 호출하고 LawDetail 객체로 반환
-     * @param lawId 조회할 법률의 일련번호 (법령키)
-     * @return LawDetail 객체 (조문내용, 항내용 등 포함)
+     * @param lsiSeq 조회할 법률의 마스터 번호 - 법령 테이블의 lsi_seq값을 의미 (법령키)
+     * @return LawDetailWrapper 객체 (법령 리스트)
      * @throws IOException API 통신 오류 발생 시
      */
-    public LawDetail getLawDetail(int lawId) throws IOException, JsonSyntaxException {
-        String url = String.format("%s&ID=%d", LAW_DETAIL_API_BASE_URL, lawId);
-        return executeRequestAndParse(url, LawDetail.class);
+    public LawDetailWrapper getLawDetail(int lsiSeq) throws IOException, JsonSyntaxException {
+        String url = String.format("%s&MST=%d", LAW_DETAIL_API_BASE_URL, lsiSeq);
+        return executeRequestAndParse(url, LawDetailWrapper.class);
     }
 
     /**
