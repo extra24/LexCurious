@@ -3,7 +3,6 @@ package com.lexcurious.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.lexcurious.model.LawDetail;
-import com.lexcurious.model.LawSearch;
 import com.lexcurious.model.LawSearchWrapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
