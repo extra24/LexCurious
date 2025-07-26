@@ -1,6 +1,6 @@
 package com.lexcurious.ui;
 
-import com.lexcurious.model.Law;
+import com.lexcurious.model.search.Law;
 import com.lexcurious.model.tree.ArticleItem;
 import com.lexcurious.model.tree.ClauseItem;
 import com.lexcurious.ui.components.LawTreeCellRenderer;

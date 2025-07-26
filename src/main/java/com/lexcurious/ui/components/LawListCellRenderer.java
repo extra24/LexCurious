@@ -1,6 +1,6 @@
 package com.lexcurious.ui.components;
 
-import com.lexcurious.model.Law;
+import com.lexcurious.model.search.Law;
 
 import javax.swing.*;
 import java.awt.*;
