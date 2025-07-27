@@ -30,11 +30,22 @@ public class LawApiClient {
 
     // 생성자 - OkHttpClient와 Gson 인스턴스를 주입받고, 설정 파일에서 API URL을 로드
     public LawApiClient() {
-        this.httpClient = new OkHttpClient();;
-        // GsonBuilder를 사용하여 ArticleUnit 클래스에 대한 커스텀 Deserializer를 등록
-        this.gson = new GsonBuilder()
-                .registerTypeAdapter(ArticleUnit.class, new ArticleUnitDeserializer())
-                .create();
+        this(new OkHttpClient(),
+                new GsonBuilder().registerTypeAdapter(ArticleUnit.class, new ArticleUnitDeserializer()).create());
+    }
+
+    // 테스트용 생성자
+    public LawApiClient(OkHttpClient httpClient, Gson gson, String listApiUrl, String detailApiUrl) {
+        this.httpClient = httpClient;
+        this.gson = gson;
+        this.LAW_LIST_API_BASE_URL = listApiUrl;
+        this.LAW_DETAIL_API_BASE_URL = detailApiUrl;
+    }
+
+    // 기존 생성자 - API URL을 프로퍼티 파일에서 로드
+    public LawApiClient(OkHttpClient httpClient, Gson gson) {
+        this.httpClient = httpClient;
+        this.gson = gson;
 
         Properties prop = loadProperties();
         LAW_LIST_API_BASE_URL = getProperty(prop, "law.api.list.base-url");
